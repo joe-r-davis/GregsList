@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="styles/style.css">
+  <title>GregsList!</title>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="container">
+      <h1>Welcome to GregsList!</h1>
+      <br>
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#autos">Autos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#properties">Properties</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#jobs">Jobs</a>
+        </li>
+      </ul>
+
+
+      <!-- Tab panes -->
+
+      <!-- AUTOS TAB PANE TAB STARTS HERE -->
+      <div class="tab-content">
+        <div id="autos" class="container tab-pane active">
+          <br>
+          <h3>AUTOS</h3>
+          <p>Need to sell you car? No problem! Just enter the info about your car in the form below and it will automatically
+            be added to the GregsList Autos Board.</p>
+          <hr>
+
+          <!-- AUTOS FORM GOES HERE -->
+          <form onsubmit="app.controllers.autosCtrl.addCar(event)" id="car-form">
+            <input type="text" name='make' placeholder='Make'>
+            <input type="text" name='model' placeholder='model'>
+            <input type="number" name='year' placeholder='year'>
+            <input type="number" name="price" placeholder="NAME YER PRICE">
+            <input type="url" name="img" placeholder="image link">
+            <div class="form-group">
+              <label for="condition">condition</label>
+              <select class="form-control" id="condition" name="condition">
+                <option value="0">"new"</option>
+                <option value="1">like new</option>
+                <option value="2">fair</option>
+                <option value="3">rust-bucket</option>
+                <option value="4">you got a tow truck?</option>
+              </select>
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+          <hr>
+        </div>
+        <!-- AUTOS TAB PANE TAB ENDS HERE -->
+
+        <!-- PROPERTIES TAB PANE TAB STARTS HERE -->
+        <div id="properties" class="container tab-pane fade">
+          <br>
+          <h3>PROPERTIES</h3>
+          <p>Have a property for sale or rent? You've come to the right place. Just enter the info about your property in the
+            form below and it will automatically be added to the Gregslist Properties Board.</p>
+          <hr>
+
+
+
+
+          <!-- PROPERTIES FORM GOES HERE -->
+          <form onsubmit="app.controllers.propertiesCtrl.addProperty(event)" id="property-form">
+            <div class="form-group">
+              <label for="category">category</label>
+              <select class="form-control" id="category" name="category">
+                <option value="0">rooms and shares</option>
+                <option value="1">apts/housing for rent</option>
+                <option value="2">real estate- by broker</option>
+                <option value="3">real estate- by owner</option>
+                <option value="4">office and commercial</option>
+              </select>
+            </div>
+            <input type="text" name='bedrooms' placeholder='No. of bedrooms'>
+            <input type="text" name='lister' placeholder='Listing contact'>
+            <input type="text" name='address' placeholder='Property address'>
+            <input type="number" name="price" placeholder="Price">
+            <input type="url" name="img" placeholder="image link">
+            <button type="submit">Submit</button>
+          </form>
+          <hr>
+        </div>
+        <!-- PROPERTIES TAB PANE TAB ENDS HERE -->
+
+        <!-- JOBS TAB PANE TAB STARTS HERE -->
+        <div id="jobs" class="container tab-pane fade">
+          <br>
+          <h3>JOBS</h3>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+        </div>
+      </div>
+      <!-- JOBS TAB PANE TAB ENDS HERE -->
+
+      <div class="row" id="board-autos">
+        
+
+        <!-- AUTOS BOARD DRAWS HERE -->
+
+      </div>
+      <div class="row" id="board-properties">
+
+        <!-- PROPERTIES BOARD DRAWS HERE -->
+
+      </div>
+    </div>
+    <!-- END OF CONTENTS CONTAINER -->
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+  <!-- EXTERNAL LIBRARIES -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <!-- SERVICES -->
+  <script src="app/autos/auto-service.js"></script>
+  <script src="app/properties/property-service.js"></script>
+  <!-- CONTROLLERS -->
+  <script src="app/autos/auto-controller.js"></script>
+  <script src="app/properties/property-controller.js"></script>
+  <!-- INIT/APP -->
+  <script src="app/init.js"></script>
+</body>
+
+</html>
